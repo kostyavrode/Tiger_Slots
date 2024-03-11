@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Loading.unity
+    path: 
     guid: d43ad6ef960f7f14287c427688753c46
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SlotsScene2.unity
     guid: 3c76588b6d182d340a2fd36c4cf746a4
+  - enabled: 1
+    path: Assets/Scenes/SlotsScene3.unity
+    guid: a6274deff0fcba246bea1943f1ee93ab
+  - enabled: 1
+    path: Assets/Scenes/SlotsScene4.unity
+    guid: 399f3f10271fae94ea442dc2755640ab
+  - enabled: 1
+    path: Assets/Scenes/SlotsScene5.unity
+    guid: 7000c76dfc07b814184c7797ace7f958
   m_configObjects: {}
