@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.SetInt("Money", 0);
+            PlayerPrefs.SetInt("Money", 100000);
             PlayerPrefs.Save();
         }
         
