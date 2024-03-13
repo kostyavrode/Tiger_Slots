@@ -6,7 +6,8 @@ using TMPro;
 
 public class SlotController : MonoBehaviour
 {
-
+    public GameObject winPanel;
+    public TMP_Text winSummText;
     public SlotColumnController[] SlotColumns = new SlotColumnController[3];
     public Sprite[] SlotItemsTexture = new Sprite[7];
     public GameObject ColumnItemPrefab;
@@ -103,9 +104,14 @@ public class SlotController : MonoBehaviour
             {
                 if (this.slotResult[2 + i,0] == this.slotResult[2 + i, 1] && this.slotResult[2 + i, 1] == this.slotResult[2 + i, 2])
                 {
+                    BigWin();
+                    win = true;
+                }
+                else if (this.slotResult[2 + i, 0] == this.slotResult[2 + i, 1] || this.slotResult[2 + i, 1] == this.slotResult[2 + i, 2])
+                {
                     Win();
                     win = true;
-                }                
+                }
             }
             if (!win)
             {
@@ -114,13 +120,24 @@ public class SlotController : MonoBehaviour
         }
         UnlockButton();
     }
-
-    void Win()
+    void BigWin()
     {
+        winPanel.SetActive(true);
         cashNum += betController.betnum;
         PlayerPrefs.SetInt("Money", cashNum);
         cash.text = cashNum.ToString();
+        winSummText.text = "+" + (betController.betnum).ToString();
         win.text = "+" + betController.betnum.ToString();
+    }
+    void Win()
+    {
+        //winPanel.SetActive(true);
+        cashNum += betController.betnum/2;
+        PlayerPrefs.SetInt("Money", cashNum);
+        cash.text = cashNum.ToString();
+        int t = betController.betnum / 2;
+        //winSummText.text="+"+ t.ToString();
+        win.text = "+" + t.ToString();
     }
 
     void Lose()
