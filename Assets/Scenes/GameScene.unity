@@ -8311,6 +8311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc6b09e25e6ad0943a2c9e5fc634bc2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orientator: {fileID: 745966565}
   scoreBar: {fileID: 1460475514}
   bestScoreBar: {fileID: 0}
   moneyBar: {fileID: 632794921}
