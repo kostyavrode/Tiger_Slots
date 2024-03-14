@@ -14,6 +14,7 @@ public class SlotController : MonoBehaviour
     public int ColumnItemHeight;
     public byte ColumnItemsCount;
     public Button SpinBt;
+    public Button SpinBt2;
     public Button BetBt;
     byte columnCount = 0;
     byte[,] slotResult;
@@ -77,6 +78,7 @@ public class SlotController : MonoBehaviour
     void LockButton ()
     {
         SpinBt.interactable = false;
+        SpinBt2.interactable = false;
         BetBt.interactable = false;
         columnCount = 0;
     }
@@ -87,6 +89,7 @@ public class SlotController : MonoBehaviour
         if (columnCount >= SlotColumns.Length)
         {
             SpinBt.interactable = true;
+            SpinBt2.interactable = true;
             BetBt.interactable = true;
         }
     }
