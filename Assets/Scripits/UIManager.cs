@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
+    public GameObject orientator;
     [SerializeField] private TMP_Text scoreBar;
     [SerializeField] private TMP_Text bestScoreBar;
     [SerializeField] private TMP_Text moneyBar;
@@ -46,7 +47,7 @@ public class UIManager : MonoBehaviour
             obj.SetActive(false);
         }
         blackWindow.SetActive(true);
-
+        orientator.SetActive(true);
     }
     public void EndGame(bool isWin=false)
     {
