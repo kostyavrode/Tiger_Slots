@@ -8,13 +8,13 @@ public class Purchaser : MonoBehaviour
     {
         switch(product.definition.id)
         {
-            case "buy.2000coins":
+            case "com.2000.buycoins":
                 AddCoins(2000);
                 break;
-            case "buy.5000coins":
+            case "com.5000.buycoins":
                 AddCoins(5000);
                 break;
-            case "buy.10000coins":
+            case "com.10000.buycoins":
                 AddCoins(10000);
                 break;
         }

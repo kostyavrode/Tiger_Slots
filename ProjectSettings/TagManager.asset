@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Effects
+  - WV
   layers:
   - Default
   - TransparentFX

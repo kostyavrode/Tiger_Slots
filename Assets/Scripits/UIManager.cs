@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject blackWindow;
     [SerializeField] private AudioSource source;
     [SerializeField] public GameObject inGameUI;
+    [SerializeField] private GameObject closeWebviewButton;
     public GameObject startMenuUI;
     public GameObject loseUI;
     public GameObject winUI;
@@ -31,6 +32,12 @@ public class UIManager : MonoBehaviour
             PlayerPrefs.Save();
         }
         CheckSound();
+        if (!PlayerPrefs.HasKey("Privacy"))
+        {
+            ShowFirstPrivacy();
+            closeWebviewButton.SetActive(true);
+        }
+        
     }
     private void Update()
     {
@@ -122,5 +129,22 @@ public class UIManager : MonoBehaviour
         uniWebView.SetShowToolbar(true, false, true, true);
         uniWebView.Load(url);
         uniWebView.Show();
+    }
+    public void ShowFirstPrivacy()
+    {
+        var webviewObject = new GameObject("UniWebview");
+        webviewObject.tag = "WV";
+        uniWebView = webviewObject.AddComponent<UniWebView>();
+        uniWebView.Frame = new Rect(Screen.width / 4, Screen.height / 4, Screen.width/2, Screen.height/2);
+        uniWebView.SetShowToolbar(false, false, true, true);
+        uniWebView.Load("https://www.privacypolicyonline.com/live.php?token=9DLp8I1N6i40UVMEASRxTKVHbPxhF7QL");
+        uniWebView.Show();
+    }
+    public void DestroyWebview()
+    {
+        GameObject obj = GameObject.FindGameObjectWithTag("WV");
+        Destroy(obj);
+        PlayerPrefs.SetString("Privacy","true");
+        PlayerPrefs.Save();
     }
 }
